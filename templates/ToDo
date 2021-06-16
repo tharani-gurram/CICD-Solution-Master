@@ -1,0 +1,8 @@
+1. Web URL
+done ---- > Accept Git URL 
+done -----> Accept Credentials (user id in Jenkins)
+done -----> Option to Select maven/ant
+done -----> Option to pass required variable
+
+-----> After build and deploy option 1. to test code quality (ask for sonarproject.properties)
+-----> After build and deploy option 2. to provision and deploy on EC2 (ask for 
