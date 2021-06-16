@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CICD App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+
+    <style>
+      .alert {
+        background: green;
+        padding: 1rem;
+        border-radius: 5px;
+        color: white;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>CICD Console</h3>
+    </div>
+
+    <!-- Form -->
+    <div class="container">
+      <form action="/send" method="POST">
+        <label for="github_url">Github URL</label>
+        <input type="text" placeholder="Enter Github Url" class="u-full-width" name="github_url"/>
+
+        <label for="github_branch">Github Branch</label>
+        <input type="text" placeholder="Enter Github Branch" class="u-full-width" name="github_branch"/>		
+
+        <label for="github_credentials">Github Credentials ID</label>
+        <input type="text" placeholder="Enter Github Credentials" class="u-full-width" name="github_credentials"/>
+
+        <label for="build_tool">Build Tool</label>
+        <select class="u-full-width" name="build_tool">
+          <option value="Ant">Ant</option>
+          <option value="Maven">Maven</option>
+        </select>
+		
+        <p><b>Choose Post Build Actions</p></b>
+		<input type="checkbox" id="sonar_scan" name="sonar_scan" value="sonar_scan"><b>Sonar Code Quality Check</b><br>
+		<input type="checkbox" id="ec2_deploy" name="ec2_deploy" value="ec2_deploy"><b>Deploy on EC2</b><br>	
+
+        <input type="submit" value="Build Now" id="calc_btn" />
+        <br />
+<div id="outputDiv" style="width: 500px; height: 30px; border: 1px solid;"> {{result}}</div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
